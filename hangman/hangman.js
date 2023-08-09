@@ -1,4 +1,4 @@
-var random_words = ["Love","Hate","Dog","Responsible","Total", "Football","Command"] //array of random words
+var random_words = ["love","hate","football","array",] //array of random words
 let answer = ''; //anwser
 let maximumAtt = 6; //the maximum wrong attempts that we can get
 let wrong = 0; // counts the wrong attempts, starting from 0
@@ -49,10 +49,10 @@ function wrongNum() {
     document.getElementById('wrongs').innerHTML = wrong;
 } 
 function YouWon() {
-    if (Status == answer) {
-    document.getElementById('keyboard').innerHTML = 'Congratulations! You have Won!';
-    } 
-} 
+  if (Status == answer) {
+      document.getElementById('endgame').innerHTML = 'Congratulations! You have Won!';
+  }
+}
 function YouLose() {
     if (wrong == maximumAtt) {
     document.getElementById('keyboard').innerHTML = 'Sorry, you are out of guesses.';
@@ -62,7 +62,6 @@ function closerToHanging() {
     document.getElementById('hangman').src = './images/' + wrong + '.jpg';
 }
 function restartGame() {
-  console.log("Before reset: ", wrong);
   wrong = 0;
   guessed = [];
   Status = null;
@@ -71,8 +70,8 @@ function restartGame() {
   Buttons();
   wordGuessed();
   wrongNum();
-  console.log("Before reset: ", wrong);
   document.getElementById('keyboard').innerHTML = ''; // Clear the guessed letters
+  document.getElementById('endgame').innerHTML = ''; // Clear the guessed letters
   Buttons();
   document.getElementById('keyboard').style.pointerEvents = 'auto'; // Enable letter buttons
 }
